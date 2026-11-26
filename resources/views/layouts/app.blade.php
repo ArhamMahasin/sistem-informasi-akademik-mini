@@ -53,11 +53,35 @@
                 </button>
 
                 <div class="ms-auto d-flex align-items-center gap-3">
-                    <span class="text-secondary small">
-                        Sistem Informasi Akademik
-                    </span>
 
-                    <div class="user-avatar">U</div>
+                    @auth
+                        <div class="text-end">
+                            <div class="fw-semibold small">
+                                {{ Auth::user()->name ?? Auth::user()->username }}
+                            </div>
+
+                            <small class="text-secondary">
+                                {{ ucfirst(Auth::user()->role) }}
+                            </small>
+                        </div>
+
+                        <div class="user-avatar">
+                            {{ strtoupper(substr(Auth::user()->username, 0, 1)) }}
+                        </div>
+
+                        <form action="{{ route('logout') }}" method="POST">
+                            @csrf
+
+                            <button type="submit" class="btn btn-outline-danger btn-sm">
+                                Logout
+                            </button>
+                        </form>
+                    @else
+                        <a href="{{ route('login') }}" class="btn btn-primary btn-sm">
+                            Login
+                        </a>
+                    @endauth
+
                 </div>
 
             </nav>

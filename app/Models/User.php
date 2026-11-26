@@ -15,8 +15,10 @@ class User extends Authenticatable
         'username',
         'name',
         'email',
+        'identifier',
         'password',
         'role',
+        'is_active',
     ];
 
     protected $hidden = [
@@ -29,8 +31,10 @@ class User extends Authenticatable
         return [
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
+            'is_active' => 'boolean',
         ];
     }
+ }
 
     public function mahasiswa(): HasOne
     {

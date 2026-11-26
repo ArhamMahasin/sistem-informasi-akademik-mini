@@ -15,28 +15,8 @@
 
     <div class="app-wrapper">
 
-        <!-- Sidebar -->
-        <aside class="sidebar" id="sidebar">
-
-            <div class="sidebar-brand">
-                <div class="brand-icon">SIA</div>
-                <div>
-                    <h6 class="mb-0 fw-bold">SIA Mini</h6>
-                    <small>UIN Sunan Gunung Djati</small>
-                </div>
-            </div>
-
-            <hr>
-
-            <div class="sidebar-menu">
-                @yield('sidebar-menu')
-            </div>
-
-            <div class="sidebar-footer">
-                <small>© 2026 Sistem Informasi Akademik Mini</small>
-            </div>
-
-        </aside>
+        {{-- Sidebar Component --}}
+        <x-sidebar />
 
         <!-- Main Content -->
         <div class="main-wrapper">

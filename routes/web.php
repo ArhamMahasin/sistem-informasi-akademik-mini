@@ -8,9 +8,14 @@ use Illuminate\Pagination\LengthAwarePaginator;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
 
-// UI Showcase
+// Landing Page
 Route::get('/', function () {
-    return view('showcase.index');
+    return view('landing.index');
+});
+
+// UI Showcase
+Route::get('/ui-showcase', function () {
+    return view('showcase.design-system');
 });
 
 // Master Layout Test
